@@ -5,7 +5,10 @@ TypescriptのDocker開発環境を構築する試み。
 ## 参考
 以下を参考に、環境構築を行う。
 
-[TypeScriptでExpress.js開発するときにやることまとめ (docker/lint/format/tsのまま実行/autoreload) - Qiita](https://qiita.com/techneconn/items/012bdf1b9ff3881546b3)
+- [TypeScriptでExpress.js開発するときにやることまとめ (docker/lint/format/tsのまま実行/autoreload) - Qiita](https://qiita.com/techneconn/items/012bdf1b9ff3881546b3)
+- [VSCodeでESLint+@typescript-eslint+Prettierを導入する（v2.0.0修正版） - Qiita](https://qiita.com/madono/items/a134e904e891c5cb1d20)
+- [TypeScript + Node.js プロジェクトのはじめかた2019 - Qiita](https://qiita.com/notakaos/items/3bbd2293e2ff286d9f49)
+
 
 ## 記事に沿って実際にやったこと
 
