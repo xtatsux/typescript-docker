@@ -1,13 +1,16 @@
-FROM node:8.12.0-slim
-ENV APP_ROOT /app/
+FROM node:latest
 
-WORKDIR $APP_ROOT
+# install the latest nodejs & npm
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
+RUN apt update \
+    && apt install -y nodejs \
+       npm \
+    && apt clean
 
-# package.jsonとpackage-lock.jsonを先にコピー。
-# package*.jsonだけを先に個別コピーすることで、パッケージ変更時は`RUN npm install`が走るが
-# それ以外のファイル変更時は同コマンドにはキャッシュ利用で飛ばされるため、ビルド時間を短縮できる。
-COPY package*.json $APP_ROOT
-RUN npm install
+RUN npm install -g typescript
 
-# その他ファイルをコピー。
-COPY . $APP_ROOT
+WORKDIR /home/app
+USER node
+ENV PORT 3000
+
+EXPOSE 3000
